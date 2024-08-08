@@ -14,7 +14,7 @@ export class TotalCapacityPieComponent implements OnInit {
 
   ngOnInit() {
     this.labels = ['Thermostat', 'Switch', 'Battery', 'EV'];
-    this.dataset[0].data = [10, 39, 21, 30];
+    this.dataset[0].data =  [449.24, 1813.46, 947.545, 1393.15];
 
     this.RenderChart();
   }
@@ -50,9 +50,13 @@ export class TotalCapacityPieComponent implements OnInit {
             color:'#25ABC5'
           },
           legend: {
-            display: true 
+            display: true, 
+            labels:{
+              color:'white'
+            }
             
           },
+
           datalabels: {
             anchor: 'center', // Anchors the label to the end of the bar
             align: 'center',  // Aligns the label at the end of the bar
@@ -60,12 +64,18 @@ export class TotalCapacityPieComponent implements OnInit {
             font: {
               size: 18
             },
+            formatter: (value, context) => {
+              const total = context.dataset.data.reduce((acc:any, value) => acc + value, 0);
+              const percentage = ((value / total) * 100).toFixed(0);
+              return `${percentage}%`;
+            }
 
           }
         },
         responsive: true,
         scales: {
           x: {
+            display:false,
             stacked: true,
             grid:{
               display:false
@@ -76,6 +86,7 @@ export class TotalCapacityPieComponent implements OnInit {
             
           },
           y: {
+            display:false,
             stacked: true,
             ticks: {
               color: 'white' // X-axis tick label color

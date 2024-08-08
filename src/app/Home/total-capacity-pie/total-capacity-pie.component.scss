@@ -1,7 +1,14 @@
 .totalCapacity{
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #203446;
 
 }
 
 #totalCapacityPie{
+    height: 100%;
+    width: 100%;
     
 }

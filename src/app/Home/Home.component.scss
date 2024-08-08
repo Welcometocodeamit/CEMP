@@ -18,6 +18,8 @@
     height: 25%;
     border: 2px solid #2E3E4D;
     border-radius: 20px;
+    box-sizing: border-box; /* Include padding and border in the element's dimensions */
+    overflow: hidden;
 }
 
 .lefttop, .rightbottom{

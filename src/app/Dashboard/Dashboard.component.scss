@@ -1,0 +1,63 @@
+.dashboard{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    margin: 10PX;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns{
+    gap: 20px;
+    display: flex;
+    
+}
+
+#active button{
+    border: 5px;
+    border-radius: 15px;
+    border-color: #26BCD7;
+}
+
+.btn button{
+    height: 40px;
+    width: 100px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background-color: #354757;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:active{
+
+}
+
+.button-active {
+    border: 5px;
+    border-radius: 15px;
+    border-color: #26BCD7;/* Border color when the button is active */
+}
+
+#grid{
+    background-color: #54B948;
+    color: white;
+    font-size: x-large;
+    border-radius: 15px;
+    width: 400px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+
+
+
+
+
+.gridInfo{
+
+}

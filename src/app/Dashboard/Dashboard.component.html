@@ -1,0 +1,41 @@
+<div class="dashboard">
+  <div class="header">
+      <div class="btns">
+
+        <div class="btn" id="active">
+          <button
+            (click)="setActiveButton('Summary')">
+            Summary
+          </button>
+        </div>
+        
+        <div class="btn">
+          <button
+            [ngClass]="{'button-active': activeButton === 'Details'}"
+            (click)="setActiveButton('Details')">
+            Details
+          </button>
+        </div>
+        
+        <div class="btn">
+          <button
+            [ngClass]="{'button-active': activeButton === 'Aggregators'}"
+            (click)="setActiveButton('Aggregators')">
+            Aggregators
+          </button>
+        </div>
+        
+
+      </div>
+
+      <div class="gridInfo">
+          <div id="grid">
+              T1025B03
+          </div>
+      </div>
+  </div>
+
+  <div class="body">
+    <app-Home></app-Home>
+  </div>
+</div>

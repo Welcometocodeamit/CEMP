@@ -28,7 +28,6 @@ export class AssetAvailibliltyByTypeComponent implements OnInit {
       backgroundColor: ['#FFD200', '#00789E', '#54B948', '#26BCD7'],
       borderColor: 'rgba(75, 192, 192, 1)',
       borderWidth: 1,
-      barPercentage:1,
   
     },
     {
@@ -37,7 +36,6 @@ export class AssetAvailibliltyByTypeComponent implements OnInit {
       backgroundColor: ['rgba(255, 210, 0, 0.5)', 'rgba(0, 120, 158, 0.5)', 'rgba(84, 185, 72, 0.5)', 'rgba(38, 188, 215, 0.5)'],
       borderColor: 'rgba(153, 102, 255, 1)',
       borderWidth: 1,
-      barPercentage:1,
     }
   ];
   chart!: Chart;
@@ -80,7 +78,9 @@ export class AssetAvailibliltyByTypeComponent implements OnInit {
           x: {
             stacked: true,
             ticks: {
-              color: 'white' // X-axis tick label color
+              color: 'white',
+              padding: 0,
+              
             },
             
           },

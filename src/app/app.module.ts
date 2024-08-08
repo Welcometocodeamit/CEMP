@@ -10,15 +10,19 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 import { AssetAvailibliltyByTypeComponent } from './Home/asset-availiblilty-by-type/asset-availiblilty-by-type.component';
 import { TotalCapacityPieComponent } from './Home/total-capacity-pie/total-capacity-pie.component';
+import { DashboardComponent } from './Dashboard/Dashboard.component';
+import { AssetCapacityOverTimeComponent } from './Home/asset-capacity-over-time/asset-capacity-over-time.component';
 
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
       HomeComponent,
       AssetCapacityTableComponent,
       AssetAvailibliltyByTypeComponent,
-      TotalCapacityPieComponent
+      TotalCapacityPieComponent,
+      DashboardComponent,
+      AssetCapacityOverTimeComponent
    ],
   imports: [
     BrowserModule,
