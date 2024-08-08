@@ -8,13 +8,17 @@ import { AssetCapacityTableComponent } from './Home/asset-capacity-table/asset-c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
+import { AssetAvailibliltyByTypeComponent } from './Home/asset-availiblilty-by-type/asset-availiblilty-by-type.component';
+import { TotalCapacityPieComponent } from './Home/total-capacity-pie/total-capacity-pie.component';
 
 
 @NgModule({
   declarations: [	
     AppComponent,
       HomeComponent,
-      AssetCapacityTableComponent
+      AssetCapacityTableComponent,
+      AssetAvailibliltyByTypeComponent,
+      TotalCapacityPieComponent
    ],
   imports: [
     BrowserModule,

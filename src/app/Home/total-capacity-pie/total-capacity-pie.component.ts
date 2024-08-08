@@ -4,18 +4,17 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 Chart.register(...registerables, ChartDataLabels);
 
 @Component({
-  selector: 'app-asset-availiblilty-by-type',
-  templateUrl: './asset-availiblilty-by-type.component.html',
-  styleUrls: ['./asset-availiblilty-by-type.component.scss']
+  selector: 'app-total-capacity-pie',
+  templateUrl: './total-capacity-pie.component.html',
+  styleUrls: ['./total-capacity-pie.component.scss']
 })
-export class AssetAvailibliltyByTypeComponent implements OnInit {
+export class TotalCapacityPieComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
     this.labels = ['Thermostat', 'Switch', 'Battery', 'EV'];
-    this.dataset[0].data = [332.90, 1134.62, 513.227, 1102.794];
-    this.dataset[1].data = [449.24, 1813.46, 947.545, 1393.15];
+    this.dataset[0].data = [10, 39, 21, 30];
 
     this.RenderChart();
   }
@@ -23,28 +22,19 @@ export class AssetAvailibliltyByTypeComponent implements OnInit {
   labels: string[] = [];
   dataset: ChartDataset[] = [
     {
-      label: 'Dataset 1',
       data: [],
       backgroundColor: ['#FFD200', '#00789E', '#54B948', '#26BCD7'],
       borderColor: 'rgba(75, 192, 192, 1)',
       borderWidth: 1,
       barPercentage:1,
   
-    },
-    {
-      label: 'Dataset 2',
-      data: [],
-      backgroundColor: ['rgba(255, 210, 0, 0.5)', 'rgba(0, 120, 158, 0.5)', 'rgba(84, 185, 72, 0.5)', 'rgba(38, 188, 215, 0.5)'],
-      borderColor: 'rgba(153, 102, 255, 1)',
-      borderWidth: 1,
-      barPercentage:1,
     }
   ];
   chart!: Chart;
 
   RenderChart(): void {
-    this.chart = new Chart('myChart', {
-      type: 'bar',
+    this.chart = new Chart('totalCapacityPie', {
+      type: 'pie',
       data:{
         labels:this.labels,
         datasets:this.dataset
@@ -53,14 +43,14 @@ export class AssetAvailibliltyByTypeComponent implements OnInit {
         plugins: {
           title: {
             display: true,
-            text: 'Available Assets Capacity By Type ',
+            text: 'Total Capacity By Asset Type',
             font:{
               size:20
             },
             color:'#25ABC5'
           },
           legend: {
-            display: false 
+            display: true 
             
           },
           datalabels: {
@@ -70,15 +60,16 @@ export class AssetAvailibliltyByTypeComponent implements OnInit {
             font: {
               size: 18
             },
-            formatter: (value) => {
-              return value.toFixed(2);
-            }
+
           }
         },
         responsive: true,
         scales: {
           x: {
             stacked: true,
+            grid:{
+              display:false
+            },
             ticks: {
               color: 'white' // X-axis tick label color
             },
@@ -89,12 +80,14 @@ export class AssetAvailibliltyByTypeComponent implements OnInit {
             ticks: {
               color: 'white' // X-axis tick label color
             },
+            grid:{
+              display:false
+            },
           }
         },
         backgroundColor: '#203446'
       }
     });
   }
-
 
 }
