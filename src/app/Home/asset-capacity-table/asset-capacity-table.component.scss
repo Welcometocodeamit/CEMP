@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    border: 2px solid #2E3E4D;
+    border-collapse: separate; 
+    border-radius: 13px;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.mat-table .mat-row:nth-child(odd) {
+    background-color: #d9d8e2;  /* Light gray background for odd rows */
+  }
+  
+  .mat-table .mat-row:nth-child(even) {
+    background-color: #6576cb;  /* White background for even rows */
+  }
+
+tr {
+    border: none;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+    border-bottom: none;
+    border-top: none;
+  }
+
+.mat-mdc-header-cell{
+    border:none
+}

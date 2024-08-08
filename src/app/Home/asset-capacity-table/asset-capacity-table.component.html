@@ -1,0 +1,32 @@
+<table mat-table [dataSource]="assetDetails" class="mat-elevation-z8">
+  <!-- Item Column -->
+  <ng-container matColumnDef="Asset Type">
+    <th mat-header-cell *matHeaderCellDef> Asset Type </th>
+    <td mat-cell  *matCellDef="let transaction" [style.color]="getCellColour(transaction.assetType)"> {{transaction.assetType}} </td>
+    <td mat-footer-cell *matFooterCellDef [style]="{'color': '#D7D9DA'}"> Total </td>
+  </ng-container>
+
+  <!-- Cost Column -->
+  <ng-container matColumnDef="Asset Capacity(kWh)">
+    <th mat-header-cell *matHeaderCellDef> Total Capacity(kWh) </th>
+    <td mat-cell [style]="{'color': '#27B4CF'}" *matCellDef="let transaction"> {{transaction.totalCapacity}} </td>
+    <td mat-footer-cell [style]="{'color': '#27B4CF'}" *matFooterCellDef> {{getTotalCost('totalCapacity')}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Available Capacity(kWh)">
+    <th mat-header-cell *matHeaderCellDef> Available Capacity(kWh) </th>
+    <td mat-cell [style]="{'color': '#27B4CF'}" *matCellDef="let transaction"> {{transaction.availableCapacity}} </td>
+    <td mat-footer-cell [style]="{'color': '#27B4CF'}" *matFooterCellDef> {{getTotalCost('availableCapacity')}} </td>
+  </ng-container>
+
+  <!-- Cost Column -->
+  <ng-container matColumnDef="Available Assets">
+    <th mat-header-cell *matHeaderCellDef> Available Assets </th>
+    <td mat-cell [style]="{'color': '#27B4CF'}" *matCellDef="let transaction"> {{transaction.availableAssets}} </td>
+    <td mat-footer-cell [style]="{'color': '#27B4CF'}" *matFooterCellDef> {{getTotalCost('availableAssets')}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns" [ngStyle]="{'background-color': getRowColor(0, 'header'), 'color': '#D7D9DA'}"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns; let i = index" [ngStyle]="{'background-color': getRowColor(i, 'body')}"></tr>
+  <tr mat-footer-row *matFooterRowDef="displayedColumns" [ngStyle]="{'background-color': getRowColor(0, 'footer')}"></tr>
+</table>

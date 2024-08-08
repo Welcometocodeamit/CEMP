@@ -1,0 +1,29 @@
+.maindiv{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 20px;
+}
+
+.toprow, .bottomrow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.righttop, .leftbottom{
+    width: 35%;
+    height: 25%;
+    border: 2px solid #2E3E4D;
+    border-radius: 20px;
+}
+
+.lefttop, .rightbottom{
+    width: 65%;
+    gap: 20px;
+    height: 25%;
+    border: 2px solid #2E3E4D;
+    border-radius: 20px;
+}
